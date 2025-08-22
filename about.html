@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Crop Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌾 About the Crop Recommendation System</h1>
+        <p>
+            This project is a smart farming tool built using machine learning to recommend the best crop to grow
+            based on various soil and environmental factors. The goal is to assist farmers in maximizing yield and
+            efficiency using data-driven decisions.
+        </p>
+
+        <h2>🚀 Features</h2>
+        <ul>
+            <li>Predicts the best crop based on soil nutrients (N, P, K)</li>
+            <li>Considers temperature, humidity, pH, and rainfall</li>
+            <li>Uses a trained Random Forest Classifier model</li>
+            <li>Responsive web interface built with Flask and HTML/CSS</li>
+        </ul>
+
+        <h2>📊 Input Parameters</h2>
+        <ul>
+            <li>Nitrogen (N)</li>
+            <li>Phosphorus (P)</li>
+            <li>Potassium (K)</li>
+            <li>Temperature (°C)</li>
+            <li>Humidity (%)</li>
+            <li>pH Level</li>
+            <li>Rainfall (mm)</li>
+        </ul>
+
+        <h2>👩‍💻 Developed By</h2>
+        <p>Chandni Sahu, B.Tech 3rd Year - Information Technology<br>
+        Government Women Engineering College</p>
+
+        <a href="{{ url_for('home') }}">← Back to Home</a>
+    </div>
+</body>
+</html>

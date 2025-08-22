@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction History - Crop Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📜 Prediction History</h1>
+
+        {% if data and data|length > 0 %}
+            <table>
+                <thead>
+                    <tr>
+                        {% for key in data[0].keys() %}
+                            <th>{{ key | capitalize }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in data %}
+                        <tr>
+                            {% for value in row.values() %}
+                                <td>{{ value }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p style="color: gray;">No prediction history found yet.</p>
+        {% endif %}
+
+        <a href="{{ url_for('home') }}">← Back to Home</a>
+    </div>
+</body>
+</html>

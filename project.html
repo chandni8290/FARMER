@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recommended Crop - Crop Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🌿 Crop Recommendation Result</h1>
+
+        {% if prediction %}
+            <p class="success">
+                ✅ Based on your input, the most suitable crop is:
+                <strong>{{ prediction | capitalize }}</strong>
+            </p>
+            <div class="crop-image">
+                <img src="{{ url_for('static', filename='crops/' + prediction.lower() + '.jpg') }}"
+                     alt="{{ prediction }} image"
+                     onerror="this.style.display='none'">
+            </div>
+        {% else %}
+            <p class="error">❌ Unable to predict. Please check your input and try again.</p>
+        {% endif %}
+
+        <a href="{{ url_for('home') }}">← Back to Home</a>
+    </div>
+</body>
+</html>
